@@ -10,7 +10,7 @@ const char *ssid = "YOUR_WIFI_SSID";
 const char *password = "YOUR_WIFI_PASSWORD";
 
 const char *AUTHKEY = "1234567";
-const char *CITY = "Amsterdam";
+const char *YOURCITY = "Amsterdam";
 
 WiFiClient weerliveClient;
 Weerlive weerlive(weerliveClient);
@@ -35,7 +35,7 @@ void setup()
   Serial.println("connected\r\n");
   Serial.flush();
 
-  weerlive.setup(AUTHKEY, CITY);
+  weerlive.setup(AUTHKEY, YOURCITY);
 
 }
 
@@ -47,7 +47,7 @@ void loop()
     Serial.println(weatherInfo);
   }
 
-  Serial.print("Enter a key ");
+  Serial.print("\nEnter a key ");
   while (!Serial.available()) 
   { 
      delay(10);
@@ -56,7 +56,7 @@ void loop()
   char incomingByte = Serial.read();
   
   // Print the received byte.
-  Serial.print("You pressed: ");
+  Serial.print("\nYou pressed: ");
   Serial.println(incomingByte);
   
   // Do something after the keypress.
