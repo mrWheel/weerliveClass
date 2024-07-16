@@ -50,7 +50,8 @@ const char * ssid = "YOUR_WIFI_SSID";
 const char * password = "YOUR_WIFI_PASSWORD";
 ```
 
-And you have to provide the Weerlive AUTH key!
+And you have to provide the Weerlive AUTH key and city of interest!
 ```
- weerlive.setup("AUTHKEY", "YOURCITY");
+const char *AUTHKEY = "12345678";
+const char YOURCITY = "Amsterdam";
 ```
