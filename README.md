@@ -1,14 +1,15 @@
 # WeerliveClass
 
 This is a small test suite to test the working of
-this Weerclass
+this WeerliveClass
 
-In `Weerclass.cpp` in the function `configureFilters()` you can add or remove
+In `WeerliveClass.cpp` in the function `configureFilters()` you can add or remove
 fields.
 ```
 /**
- * Configures the filters for weather data.
- */
+* Configures the filters for weather data.
+*/
+
 void Weerlive::configureFilters() 
 {
     filter["liveweer"][0]["plaats"]   = true;
@@ -44,14 +45,15 @@ void Weerlive::configureFilters()
 } //  configureFilters()
 ```
 
-In `main.cpp` you must modify:
+In `myCredentials_org.h` you must modify:
 ```
-const char * ssid = "YOUR_WIFI_SSID";
+const char * ssid     = "YOUR_WIFI_SSID";
 const char * password = "YOUR_WIFI_PASSWORD";
 ```
-
 And you have to provide the Weerlive AUTH key and city of interest!
 ```
-const char *AUTHKEY = "12345678";
-const char YOURCITY = "Amsterdam";
+const char *AUTHKEY   = "12345678";
+const char YOURCITY   = "Amsterdam";
 ```
+## DON'T FORGET
+Rename `myCredentials_org.h` to `myCredentials.h`

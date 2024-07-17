@@ -5,6 +5,7 @@
 #include <ArduinoJson.h>                    // JSON decoding library
 
 #include "WeerliveClass.h"
+#include "myCredentials.h"
 
 const char *ssid = "YOUR_WIFI_SSID";
 const char *password = "YOUR_WIFI_PASSWORD";
