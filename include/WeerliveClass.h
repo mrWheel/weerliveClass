@@ -17,7 +17,7 @@ class Weerlive
       WiFiClient& client;
       String apiUrl;
       static const char* apiHost;
-      StaticJsonDocument<3000> doc;
+      StaticJsonDocument<4000> doc;
       StaticJsonDocument<500> filter;
       String payload;
       String weerliveText;

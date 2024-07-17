@@ -1,8 +1,8 @@
-#ifdef _MYCREDENTIALS_H
+#ifndef _MYCREDENTIALS_H
 #define _MYCREDENTIALS_H
 
-const char *ssid     = "YOUR_WIFI_SSID";
-const char *password = "YOUR_WIFI_PASSWORD";
+const char *SSID     = "YOUR_WIFI_SSID";
+const char *PASSWORD = "YOUR_WIFI_PASSWORD";
 
 const char *AUTHKEY  = "1234567";
 const char *YOURCITY = "Amsterdam";
