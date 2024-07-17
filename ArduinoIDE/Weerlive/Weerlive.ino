@@ -5,12 +5,7 @@
 #include <ArduinoJson.h>                    // JSON decoding library
 
 #include "WeerliveClass.h"
-
-const char *ssid = "YOUR_WIFI_SSID";
-const char *password = "YOUR_WIFI_PASSWORD";
-
-const char *AUTHKEY = "1234567";
-const char *YOURCITY = "Amsterdam";
+#include "myCredentials.h"
 
 WiFiClient weerliveClient;
 Weerlive weerlive(weerliveClient);
@@ -24,8 +19,9 @@ void setup()
   Serial.println();
   Serial.print("Connecting.");
 
+  //-- Acess Wi-FI point
   WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, password);               // access Wi-FI point
+  WiFi.begin(SSID, PASSWORD);               
   
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
@@ -56,9 +52,11 @@ void loop()
   char incomingByte = Serial.read();
   
   // Print the received byte.
-  Serial.print("\nYou pressed: ");
-  Serial.println(incomingByte);
-  
+  if (incomingByte == '\r')  Serial.println("\nYou pressed: [<cr>]\r\n");
+  else if (incomingByte == '\n')  Serial.println("\nYou pressed: [<nl>]\r\n");
+  else if (incomingByte == '\n')  Serial.printf("\nYou pressed: [%c]\r\n\n", incomingByte);
+  while(Serial.available() > 0)  Serial.read();
+
   // Do something after the keypress.
   Serial.println("Continuing execution...");
   

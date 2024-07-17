@@ -43,7 +43,7 @@ void loop()
     Serial.println(weatherInfo);
   }
 
-  Serial.print("\nEnter a key ");
+  Serial.print("\nPress any key ");
   while (!Serial.available()) 
   { 
      delay(10);
@@ -55,6 +55,7 @@ void loop()
   if (incomingByte == '\r')  Serial.println("\nYou pressed: [<cr>]\r\n");
   else if (incomingByte == '\n')  Serial.println("\nYou pressed: [<nl>]\r\n");
   else if (incomingByte == '\n')  Serial.printf("\nYou pressed: [%c]\r\n\n", incomingByte);
+  while(Serial.available() > 0)  Serial.read();
 
   // Do something after the keypress.
   Serial.println("Continuing execution...");
