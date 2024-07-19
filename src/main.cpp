@@ -37,6 +37,9 @@ void setup()
 
 void loop() 
 {
+  #ifdef DEBUG
+    Serial.println("loop()");
+  #endif
   if (WiFi.status() == WL_CONNECTED)   // Check WiFi connection status
   {      
     const char* weatherInfo = weerlive.request();
